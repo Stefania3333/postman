@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "956f8c4f-2b7d-42c5-8bf4-0d7afa99e900",
+		"name": "Pre-produccion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24253846"
+	},
+	"item": [
+		{
+			"name": "Push-notification",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 771c142eadd1a8de6693e67bef49e764164696b4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"titulo\":\"Alerta 0029\",\n\"descripcion\":\"DESCRIPTION: Personal\",\n\"fecha_inicio\":\"20220329000000\",\n\"fecha_fin\":\"20220630235959\",\n\"imagen_adjunto\":\"alerta\",\n\"id_empresa\":\"1\",\n\"empresa_id\":\"1\",\n\"tipo\":\"Alerta\",\n\"id_pais\":\"ARG\",\n\"id_distribuidor\":\"1\",\n\"id_sucursal\":\"1\",\n\"codigo_cliente\":[\"0000000093\"] \n}"
+				},
+				"url": {
+					"raw": "{{protocol}}://{{url}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
